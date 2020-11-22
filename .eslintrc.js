@@ -17,7 +17,7 @@ module.exports = {
     'prettier',
     'prettier/@typescript-eslint',
     'prettier/react',
-    'prettier/standard'
+    'prettier/standard',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -33,6 +33,7 @@ module.exports = {
     '@typescript-eslint',
     'import',
     'jsx-a11y',
+    'prefer-arrow',
     'prettier',
     'react',
     'react-hooks',
@@ -85,8 +86,16 @@ module.exports = {
       },
     ],
     // バグ解消のため
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"]
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'prefer-arrow/prefer-arrow-functions': [
+      'error',
+      {
+        disallowProtoType: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
   },
   overrides: [
     {
